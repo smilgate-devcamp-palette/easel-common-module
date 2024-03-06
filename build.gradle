@@ -1,7 +1,20 @@
 plugins {
     id 'java'
-    id("org.springframework.boot") version "3.2.1"
+    id 'maven-publish'
+    id("org.springframework.boot") version "3.2.3"
     id("io.spring.dependency-management") version "1.1.4"
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            groupId = 'com.github.smilgate-devcamp-palette'
+            artifactId = 'easel-common-module'
+            version = '0.0'
+
+            from components.java
+        }
+    }
 }
 
 group 'org.palette'
